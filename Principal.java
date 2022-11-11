@@ -54,14 +54,101 @@ public class Principal{
                                 }
     
                                 case 5: {
+                                    boolean salir2 = false;
+                                    while(!salir2){
+                                        System.out.println("1. Seleccionar Lista \n2. Cambiar cancion \n3.Eschuchar cancion \n4. Salir");
+                                        int op2 = teclado.nextInt();
+                                        teclado.nextLine();
+                                        switch(op2){
+                                            case 1: {
+                                                break;
+                                            }
+
+                                            case 2: {
+                                                break;
+                                            }
+
+                                            case 3: {
+                                                break;
+                                            }
+                                        }
+                                    }
                                     break;
                                 }
     
                                 case 6: {
+                                    boolean salir3 = false;
+                                    while(!salir3){
+                                        System.out.println("1. Conectar/Desconectar telefono \n2. Mostrar contactos \n3. Llamar contacto \n4. Cambiar a speaker o auriculares \n5. Salir");
+                                        int op3 = teclado.nextInt();
+                                        teclado.nextLine();
+                                        switch(op3){
+                                            case 1: {
+                                                if (radio.ConectDesconectTelefono()){
+                                                    System.out.println("Conectando telefono...");
+                                                }
+                                                else{
+                                                    System.out.println("Desconectando telefono...");
+                                                }
+                                                break;
+                                            }
+
+                                            case 2: {
+                                                System.out.println(radio.MostrarContactos());
+                                                break;
+                                            }
+
+                                            case 3: {
+                                                System.out.println(radio.MostrarContactos());
+                                                System.out.println("Ingrese el numero de telefono de su contacto");
+                                                String numero = teclado.nextLine();
+                                                System.out.println(radio.llamarContactos(numero));
+                                                System.out.println("1. Finalizar llamda");
+                                                System.out.println("Seleccione una opcion");
+                                                int op5 = teclado.nextInt();
+                                                System.out.println(radio.FinalizarLlamada());
+                                                break;
+                                            }
+
+                                            case 4: {
+                                                if (radio.CambiarSpeaker()){
+                                                    System.out.println("Cambiando a auriculares...");
+                                                }
+                                                else{
+                                                    System.out.println("Cambiando a speaker...");
+                                                }
+                                                break;
+                                            }
+
+                                            case 5: {
+                                                salir3 = true;
+                                                break;
+                                            }
+                                        }
+                                    }
                                     break;
                                 }
     
                                 case 7: {
+                                    boolean salir4 = false;
+                                    while(!salir4){
+                                        System.out.println("1. Planificar Viaje \n2. Salir");
+                                        System.out.println("Seleccione una opcion");
+                                        int op4 = teclado.nextInt();
+                                        switch(op4){
+                                            case 1: {
+                                                System.out.println("Ingrese su destino");
+                                                String destino = teclado.nextLine();
+                                                System.out.println(radio.PlanificarViajes(destino));
+                                                break;
+                                            }
+
+                                            case 2: {
+                                                salir4 = true;
+                                            }
+
+                                        }
+                                    }
                                     break;
                                 }
     
@@ -74,13 +161,6 @@ public class Principal{
                         }
                     }
                 }
-                System.out.println(" Bienvenido a la radio, a continuacion se te presentan las siguientes opciones:\n1. Funciones principales");
-                System.out.println("2. Modo Radio");
-                System.out.println("3. Modo Reproduccion");
-                System.out.println("4. Modo Telefono");
-                System.out.println("5. Modo productividad");
-                System.out.println("Porfavor elije una opcion:");
-                op = Integer.parseInt(teclado.nextLine());
                 
             } catch (Exception e) {
                 // TODO: handle exception
@@ -88,12 +168,7 @@ public class Principal{
             }
         }
 
-        if (radio.CambiarSpeaker()){
-            System.out.println("Cambiando a speaker...");
-        }
-        else{
-            System.out.println("Cambiando a auriculares...");
-        }
+        
 
     }
 }

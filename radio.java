@@ -8,6 +8,7 @@ public class radio implements Funcionalidades{
     private ArrayList<listas> albumes;
     private String contactos[] = {"Luis Pedro...12345678", "Sebastian Perez...87654321", "Mercedes del Valle...42344289"};
     private boolean speaker;
+    private boolean conect;
 
     public radio() {
         banda = "";
@@ -15,16 +16,18 @@ public class radio implements Funcionalidades{
         emisora = "";
         emisoras = new ArrayList<String>();
         albumes = new ArrayList<listas>();
-        speaker = false;
+        speaker = true;
+        conect = true;
     }
 
-    public radio(String banda, String frecuencia, String emisora, ArrayList<String> emisoras, ArrayList<listas> albumes, boolean speaker) {
+    public radio(String banda, String frecuencia, String emisora, ArrayList<String> emisoras, ArrayList<listas> albumes, boolean speaker, boolean conect) {
         this.banda = banda;
         this.frecuencia = frecuencia;
         this.emisora = emisora;
         this.emisoras = emisoras;
         this.albumes = albumes;
         this.speaker = speaker;
+        this.conect = conect;
     }
 
 
@@ -144,7 +147,13 @@ public class radio implements Funcionalidades{
     @Override
     public boolean ConectDesconectTelefono() {
         // TODO Auto-generated method stub
-        return false;
+        if (conect){
+            conect = false;
+        }
+        else{
+            conect = true;
+        }
+        return conect;
     }
 
 
@@ -170,7 +179,8 @@ public class radio implements Funcionalidades{
     @Override
     public String FinalizarLlamada() {
         // TODO Auto-generated method stub
-        return null;
+        String resultado = "Se finalizo la llamada";
+        return resultado;
     }
 
 
