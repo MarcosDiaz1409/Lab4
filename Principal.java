@@ -37,7 +37,7 @@ public class Principal{
                             teclado.nextLine();
                             switch(op){
                                 case 1: {
-                                    
+                                    salir1 = true;
                                     break;
                                 }
                                 
