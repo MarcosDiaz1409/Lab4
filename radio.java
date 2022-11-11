@@ -9,6 +9,7 @@ public class radio implements Funcionalidades{
     private ArrayList<listas> albumes;
     private String contactos[] = {"Luis Pedro...12345678", "Sebastian Perez...87654321", "Mercedes del Valle...42344289"};
     private boolean speaker;
+    private boolean conect;
     Scanner teclado = new Scanner(System.in);
 
     public radio() {
@@ -17,16 +18,18 @@ public class radio implements Funcionalidades{
         emisora = "";
         emisoras = new ArrayList<String>();
         albumes = new ArrayList<listas>();
-        speaker = false;
+        speaker = true;
+        conect = false;
     }
 
-    public radio(String banda, String frecuencia, String emisora, ArrayList<String> emisoras, ArrayList<listas> albumes, boolean speaker) {
+    public radio(String banda, String frecuencia, String emisora, ArrayList<String> emisoras, ArrayList<listas> albumes, boolean speaker, boolean conect) {
         this.banda = banda;
         this.frecuencia = frecuencia;
         this.emisora = emisora;
         this.emisoras = emisoras;
         this.albumes = albumes;
         this.speaker = speaker;
+        this.conect = conect;
     }
 
 
@@ -98,7 +101,8 @@ public class radio implements Funcionalidades{
 
 
     @Override
-    public int cambiarVolumen(){
+    public int cambiarVolumen() {
+        // TODO Auto-generated method stub
         return 0;
     }
 
@@ -155,14 +159,24 @@ public class radio implements Funcionalidades{
     @Override
     public boolean ConectDesconectTelefono() {
         // TODO Auto-generated method stub
-        return false;
+        if (conect){
+            conect = false;
+        }
+        else{
+            conect = true;
+        }
+        return conect;
     }
 
 
     @Override
     public String MostrarContactos() {
         // TODO Auto-generated method stub
-        return null;
+        String resultado = "\n=== Contactos ===\n";
+        for(String contacto : contactos){
+            resultado = resultado +contacto+"\n";
+        }
+        return resultado ;
     }
 
 
@@ -177,7 +191,8 @@ public class radio implements Funcionalidades{
     @Override
     public String FinalizarLlamada() {
         // TODO Auto-generated method stub
-        return null;
+        String resultado = "Se finalizo la llamada";
+        return resultado;
     }
 
 
@@ -200,8 +215,4 @@ public class radio implements Funcionalidades{
         String resultado = "Se ha planificado su viaje a "+destino;
         return resultado;
     }
-
-    
-
-
 }
