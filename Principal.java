@@ -29,7 +29,9 @@ public class Principal{
                 System.out.println("5. Modo productividad");
                 System.out.println("Porfavor elije una opcion:");
                 op = Integer.parseInt(teclado.nextLine());
+
                 
+
             } catch (Exception e) {
                 // TODO: handle exception
                 System.out.println(" La entrada es incorrecta/la opcion no existe, porfavor verifica lo que ingresaste");
