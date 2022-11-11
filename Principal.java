@@ -17,8 +17,8 @@ public class Principal{
         boolean salirfp = false;
         int op = 0;
         int op1 = 0;
-        //String menu = "Bienvenido a la radio, funciones: \n1. Apagar radio \n2. Subir volumen \n3. Bajar volumen \n4.Modo radio \n5. Modo reproduccion \n6. Modo telefono \n7. Modo productividad";
-
+        int volumen = 0;
+    
         /**
          * Menu con todas las opciones que el usuario puede escoger
          */
@@ -34,7 +34,7 @@ public class Principal{
                         while(!salir1){
                             //System.out.println(menu);
                             System.out.println(" Bienvenido a la radio, a continuacion se te presentan las siguientes opciones:\n");
-                            System.out.println("1. Funciones principales");
+                            System.out.println("1. Cambiar Volumen");
                             System.out.println("2. Modo Radio");
                             System.out.println("3. Modo Reproduccion");
                             System.out.println("4. Modo Telefono");
@@ -44,27 +44,10 @@ public class Principal{
                             op = Integer.parseInt(teclado.nextLine());
             
                             switch(op){
-                                case 1: {
-                                    while(!salirfp){
-                                        System.out.println("1. Encender o apagar la radio");
-                                        System.out.println("2. Cambiar volumen");
-                                        System.out.println("3. Salir");
-                                        System.out.println("Ingrese la funcion que desee realizar:");
-                                        op1 = Integer.parseInt(teclado.nextLine());
-                                        if(op1 == 1){
-                                            
-                                        }
-                                        if(op1 == 2){
-                                            
-                                        }
-                                        if(op1 == 3){
-                                            salirfp = true;
-                                        }
-                                        else{
-                                            System.out.println("Error, opcion no valida, porfavor verifique su respuesta");
-                                        }
-                                    }
-                                    break;
+                                case 1:{ 
+                                    radio.cambiarVolumen(volumen);
+                                    
+                                break;
                                 }
                                 
                                 case 2: {
@@ -107,7 +90,7 @@ public class Principal{
                                     salir1 = true;
                                     boolean salir3 = false;
                                     while(!salir3){
-                                        System.out.println("1. Conectar/Desconectar telefono \n2. Mostrar contactos \n3. Llamar contacto \n4. Cambiar a speaker o auriculares \n5. Salir");
+                                        System.out.println("\n1. Conectar/Desconectar telefono \n2. Mostrar contactos \n3. Llamar contacto \n4. Cambiar a speaker o auriculares \n5. Salir");
                                         int op3 = teclado.nextInt();
                                         teclado.nextLine();
                                         switch(op3){
@@ -131,7 +114,7 @@ public class Principal{
                                                 System.out.println("Ingrese el numero de telefono de su contacto");
                                                 String numero = teclado.nextLine();
                                                 System.out.println(radio.llamarContactos(numero));
-                                                System.out.println("1. Finalizar llamda");
+                                                System.out.println("\n1. Finalizar llamada");
                                                 System.out.println("Seleccione una opcion");
                                                 int op5 = teclado.nextInt();
                                                 System.out.println(radio.FinalizarLlamada());
@@ -160,12 +143,13 @@ public class Principal{
                                 case 7: {
                                     boolean salir4 = false;
                                     while(!salir4){
-                                        System.out.println("1. Planificar Viaje \n2. Salir");
+                                        System.out.println("\n1. Planificar Viaje \n2. Salir");
                                         System.out.println("Seleccione una opcion");
                                         int op4 = teclado.nextInt();
+                                        teclado.nextLine();
                                         switch(op4){
                                             case 1: {
-                                                System.out.println("Ingrese su destino");
+                                                System.out.println("Ingrese su destino: ");
                                                 String destino = teclado.nextLine();
                                                 System.out.println(radio.PlanificarViajes(destino));
                                                 break;
@@ -193,8 +177,8 @@ public class Principal{
                         salir = true;
                     }
                 }
-            } catch (Exception e){
-                // TODO: handle exception
+            }catch(Exception e){
+            // TODO: handle exception
                 System.out.println(" La entrada es incorrecta/la opcion no existe, porfavor verifica lo que ingresaste");
             }
         }   
