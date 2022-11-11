@@ -15,7 +15,7 @@ public class Principal{
         boolean salir = false;
         boolean salir1 = false;
         int op = 0;
-        String menu = "Bienvenido a la radio, funciones: \n1. Apagar radio \n2. Subir volumen \n3. Bajar volumen \n4.Modo radio \n5. Modo reproduccion \n6. Modo telefono \n7. Modo productividad";
+        String menu = "\nBienvenido a la radio, funciones: \n1. Apagar radio \n2. Subir volumen \n3. Bajar volumen \n4. Modo radio \n5. Modo reproduccion \n6. Modo telefono \n7. Modo productividad";
 
         /**
          * Menu con todas las opciones que el usuario puede escoger
@@ -32,7 +32,7 @@ public class Principal{
                     case 1: {
                         while(!salir1){
                             System.out.println(menu);
-                            System.out.println("Ingrese una opcion");
+                            System.out.println("\nIngrese una opcion");
                             op = teclado.nextInt();
                             teclado.nextLine();
                             switch(op){
@@ -79,7 +79,7 @@ public class Principal{
                                 case 6: {
                                     boolean salir3 = false;
                                     while(!salir3){
-                                        System.out.println("1. Conectar/Desconectar telefono \n2. Mostrar contactos \n3. Llamar contacto \n4. Cambiar a speaker o auriculares \n5. Salir");
+                                        System.out.println("\n1. Conectar/Desconectar telefono \n2. Mostrar contactos \n3. Llamar contacto \n4. Cambiar a speaker o auriculares \n5. Salir");
                                         int op3 = teclado.nextInt();
                                         teclado.nextLine();
                                         switch(op3){
@@ -103,7 +103,7 @@ public class Principal{
                                                 System.out.println("Ingrese el numero de telefono de su contacto");
                                                 String numero = teclado.nextLine();
                                                 System.out.println(radio.llamarContactos(numero));
-                                                System.out.println("1. Finalizar llamda");
+                                                System.out.println("\n1. Finalizar llamada");
                                                 System.out.println("Seleccione una opcion");
                                                 int op5 = teclado.nextInt();
                                                 System.out.println(radio.FinalizarLlamada());
@@ -132,12 +132,13 @@ public class Principal{
                                 case 7: {
                                     boolean salir4 = false;
                                     while(!salir4){
-                                        System.out.println("1. Planificar Viaje \n2. Salir");
+                                        System.out.println("\n1. Planificar Viaje \n2. Salir");
                                         System.out.println("Seleccione una opcion");
                                         int op4 = teclado.nextInt();
+                                        teclado.nextLine();
                                         switch(op4){
                                             case 1: {
-                                                System.out.println("Ingrese su destino");
+                                                System.out.println("Ingrese su destino: ");
                                                 String destino = teclado.nextLine();
                                                 System.out.println(radio.PlanificarViajes(destino));
                                                 break;
