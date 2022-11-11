@@ -83,14 +83,17 @@ public class radio implements Funcionalidades{
     @Override
     public boolean encenderApagar() {
         String en;
-        System.out.println("Desea encender la radio?");
+        boolean salir = false;
+        System.out.println("Desea apagar la radio?");
         en = teclado.nextLine();
         if(en.equals("Si")){
-            System.out.println("La radio esta encendidad");
+            System.out.println("La radio se apagara");
+            salir = true;
         }else{
-            System.out.println("La radio esta apagada");
+            System.out.println("La radio esta encendida");
+            salir = false;
         }
-        return false;
+        return salir;
     }
 
 
