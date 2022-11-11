@@ -85,10 +85,10 @@ public class Principal{
                                         switch(op3){
                                             case 1: {
                                                 if (radio.ConectDesconectTelefono()){
-                                                    System.out.println("Conectando telefono...");
+                                                    System.out.println("Desconectando telefono...");
                                                 }
                                                 else{
-                                                    System.out.println("Desconectando telefono...");
+                                                    System.out.println("Conectando telefono...");
                                                 }
                                                 break;
                                             }

@@ -17,7 +17,7 @@ public class radio implements Funcionalidades{
         emisoras = new ArrayList<String>();
         albumes = new ArrayList<listas>();
         speaker = true;
-        conect = true;
+        conect = false;
     }
 
     public radio(String banda, String frecuencia, String emisora, ArrayList<String> emisoras, ArrayList<listas> albumes, boolean speaker, boolean conect) {
