@@ -151,7 +151,11 @@ public class radio implements Funcionalidades{
     @Override
     public String MostrarContactos() {
         // TODO Auto-generated method stub
-        return null;
+        String resultado = "\n=== Contactos ===\n";
+        for(String contacto : contactos){
+            resultado = resultado +contacto+"\n";
+        }
+        return resultado ;
     }
 
 
