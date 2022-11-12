@@ -20,6 +20,7 @@ public class Principal{
         int opmr = 0;
         int volumen = 0;
         double emi = 100.50;
+       
         /**
          * Menu con todas las opciones que el usuario puede escoger
          */
@@ -33,7 +34,7 @@ public class Principal{
                 switch(op1){
                     case 1: {
                         while(!salir1){
-                            //System.out.println(menu);
+                            // Menu principal del programa;
                             System.out.println(" Bienvenido a la radio, a continuacion se te presentan las siguientes opciones:\n");
                             System.out.println("1. Cambiar Volumen");
                             System.out.println("2. Modo Radio");
@@ -45,6 +46,8 @@ public class Principal{
                             op = Integer.parseInt(teclado.nextLine());
             
                             switch(op){
+
+                                // Opcion para subir o bajar el volumen de la radio
                                 case 1:{ 
                                     radio.cambiarVolumen(volumen);      
                                 break;
@@ -53,6 +56,7 @@ public class Principal{
                                 case 2: {
                                     boolean salirmr = false;
                                     while(!salirmr){
+                                        // Menu de opciones cuando se selecciona el modo radio
                                         System.out.println("1. Cambiar de FM a AM o viceversa");
                                         System.out.println("2. Cambiar de emisora");
                                         System.out.println("3. Guardar emisora");
@@ -60,31 +64,37 @@ public class Principal{
                                         System.out.println("5. Salir");
                                         opmr = Integer.parseInt(teclado.nextLine());
                                         switch (opmr) {
+                                            // Opcion de cambiar de FM a AM y viceversa
                                             case 1:{
                                                 radio.cambiarFMAM();
                                                 break;
                                             }
 
+                                            // Opcion para cambiar de emisora
                                             case 2:{
                                                 radio.cambiarEmisora(emi);
                                                 break;
                                             }
 
+                                            // Opcion para guardar una emisora
                                             case 3:{
                                                 radio.guardarEmisora();
                                                 break;
                                             }
 
+                                            // Opcion para cargar una emisora de las que ya estaban guardadas
                                             case 4:{
                                                 radio.cargarEmisora();
                                                 break;
                                             }
 
+                                            // Opcion para salir
                                             case 5:{
                                                 salirmr = true;
                                                 break;
                                             }
                                         
+                                            // Metodo que hace si el usuario llega a confundirse
                                             default:{
                                                 System.out.println("Opcion no existente");
                                                 break;
@@ -98,10 +108,12 @@ public class Principal{
                                 case 3: {
                                     boolean salir2 = false;
                                     while(!salir2){
+                                        // Menu de opciones para cuando la radio esta en modo reproduccion
                                         System.out.println("\n1. Seleccionar Lista \n2. Cambiar cancion \n3. Eschuchar cancion \n4. Salir");
                                         int op2 = teclado.nextInt();
                                         teclado.nextLine();
                                         switch(op2){
+                                            // Opcion para escoger una lista de reproduccion
                                             case 1: {
                                                 System.out.println(radio.desplegar());
                                                 System.out.println("Escoga una lista de reproduccion");
@@ -111,16 +123,19 @@ public class Principal{
                                                 break;
                                             }
 
+                                            // Opcion para cambiar una cancion
                                             case 2: {
                                                 System.out.println(radio.cambiarCancion());
                                                 break;
                                             }
 
+                                            // Opcion para escuchar una cancion, mostrando su respectiva informacion
                                             case 3: {
                                                 System.out.println(radio.escucharCancion());
                                                 break;
                                             }
 
+                                            // Opcion para salir
                                             case 4: {
                                                 salir2 = true;
                                                 break;
@@ -133,10 +148,12 @@ public class Principal{
                                 case 4: {
                                     boolean salir3 = false;
                                     while(!salir3){
+                                        // Menu de opciones para cuando la radio esta en modo telefono
                                         System.out.println("\n1. Conectar/Desconectar telefono \n2. Mostrar contactos \n3. Llamar contacto \n4. Cambiar a speaker o auriculares \n5. Salir");
                                         int op3 = teclado.nextInt();
                                         teclado.nextLine();
                                         switch(op3){
+                                            // Opcion para conectar y desconectar un telefono
                                             case 1: {
                                                 if (radio.ConectDesconectTelefono()){
                                                     System.out.println("Desconectando telefono...");
@@ -147,11 +164,13 @@ public class Principal{
                                                 break;
                                             }
 
+                                            // Opcion que muestra los contactos del telefono conectado
                                             case 2: {
                                                 System.out.println(radio.MostrarContactos());
                                                 break;
                                             }
 
+                                            // Opcion para llamar a un contacto del telefono conectado
                                             case 3: {
                                                 System.out.println(radio.MostrarContactos());
                                                 System.out.println("Ingrese el numero de telefono de su contacto");
@@ -164,6 +183,7 @@ public class Principal{
                                                 break;
                                             }
 
+                                            //Opcion para cambiar de speaker a auriculares y viceversa
                                             case 4: {
                                                 if (radio.CambiarSpeaker()){
                                                     System.out.println("Cambiando a auriculares...");
@@ -174,6 +194,7 @@ public class Principal{
                                                 break;
                                             }
 
+                                            // Opcion para salir
                                             case 5: {
                                                 salir3 = true;
                                                 break;
@@ -186,11 +207,13 @@ public class Principal{
                                 case 5: {
                                     boolean salir4 = false;
                                     while(!salir4){
+                                        // Menu de opciones para cuando la radio esta en modo planificacion
                                         System.out.println("\n1. Planificar Viaje \n2. Salir");
                                         System.out.println("Seleccione una opcion");
                                         int op4 = teclado.nextInt();
                                         teclado.nextLine();
                                         switch(op4){
+                                            // Opcion que planifica viajes
                                             case 1: {
                                                 System.out.println("Ingrese su destino: ");
                                                 String destino = teclado.nextLine();
@@ -198,6 +221,7 @@ public class Principal{
                                                 break;
                                             }
 
+                                            // Opcion para salir
                                             case 2: {
                                                 salir4 = true;
                                             }
@@ -207,11 +231,13 @@ public class Principal{
                                     break;
                                 }
     
+                                // Opcion para salir del menu principal
                                 case 6: {
                                     salir1 = true;
                                     break;
                                 }
-    
+                                
+                                // Metodo que se utiliza por si se ingresa una opcion no existente
                                 default: {
                                     System.out.println("Ingrese una opcion entre 1 a 6");
                                     break;
@@ -220,6 +246,7 @@ public class Principal{
                             }
                         }
                     }
+                    // Opcion por si la radio decide ser apagada
                     case 2:{
                         System.out.println("Estado de la radio: apagada");
                         salir = true;

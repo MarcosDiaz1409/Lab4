@@ -1,3 +1,9 @@
+    /**
+    * @Autor: Marcos Diaz y Diego Soto
+      @Date: 11-11-2022
+    * Esta clase describe las caracteristicas que tiene una radio de un carro clase A y tambien todas las funciones que puede realizar
+    */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,6 +19,16 @@ public class radio implements Funcionalidades{
     private listas actual;
     private int canci;
     Scanner teclado = new Scanner(System.in);
+
+    /**
+     * Parametros de la clase radio
+     * @param banda almacena la banda de la radio
+     * @param frecuencia almacena la frecuencia de la radio
+     * @param emisora almacena la emisora en la que se encuentra la radio
+     * @param emisoras almacena las emisoras que deseen guardarse
+     * @param albumes almacena las listas de reproduccion de la clase listas
+     * @param contactos almacena los contactos que tiene el telefono conectado
+     */
     
 
     public radio() {
@@ -37,48 +53,80 @@ public class radio implements Funcionalidades{
         this.conect = conect;
     }
 
-
+    /**
+    * @return String
+    */
     public String getBanda() {
         return this.banda;
     }
 
+    /**
+    * @param banda
+    */
     public void setBanda(String banda) {
         this.banda = banda;
     }
 
+    /**
+    * @return String
+    */
     public String getFrecuencia() {
         return this.frecuencia;
     }
 
+    /**
+    * @param frecuencia
+    */
     public void setFrecuencia(String frecuencia) {
         this.frecuencia = frecuencia;
     }
 
+    /**
+    * @return String
+    */
     public String getEmisora() {
         return this.emisora;
     }
 
+    /**
+    * @param emisora
+    */
     public void setEmisora(String emisora) {
         this.emisora = emisora;
     }
 
+    /**
+    * @return Arraylist<String>
+    */
     public ArrayList<String> getEmisoras() {
         return this.emisoras;
     }
 
+    /**
+    * @param emisoras
+    */
     public void setEmisoras(ArrayList<String> emisoras) {
         this.emisoras = emisoras;
     }
 
+    /**
+    * @return ArrayList<String>
+    */
     public ArrayList<listas> getAlbumes() {
         return this.albumes;
     }
 
+    /**
+    * @param albumes
+    */
     public void setAlbumes(ArrayList<listas> albumes) {
         this.albumes = albumes;
     }
 
 
+    /**
+    * @return String
+    */
     @Override
     public String toString() {
         return
@@ -87,7 +135,13 @@ public class radio implements Funcionalidades{
             "Emisora: " + getEmisora();
     }
 
+    /**
+     * Metodos de la interface funcionalidades
+     */
 
+    /**
+    * @return boolean
+    */
     @Override
     public boolean encenderApagar() {
         String en;
@@ -105,6 +159,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return int
+    */
     @Override
     public int cambiarVolumen(int volumen) {
         int a = 0;
@@ -133,6 +190,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return String
+    */
     @Override
     public String cambiarFMAM(){
         System.out.println("Ingrese su banda actual: ");
@@ -152,6 +212,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return double
+    */
     @Override
     public double cambiarEmisora(double emi) {
         System.out.println("1. Subir de emisora");
@@ -170,6 +233,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return void
+    */
     @Override
     public void guardarEmisora() {
         System.out.println("Ingrese la emisora que desea guardar:");
@@ -179,6 +245,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return double
+    */
     @Override
     public double cargarEmisora() {
         System.out.println("Que emisora deseas cargar?");
@@ -188,6 +257,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return String
+    */
     @Override
     public String seleccionarLista(int i) {
         // TODO Auto-generated method stub
@@ -196,6 +268,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return String
+    */
     @Override
     public String cambiarCancion() {
         // TODO Auto-generated method stub
@@ -209,6 +284,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return String
+    */
     @Override
     public String escucharCancion() {
         // TODO Auto-generated method stub
@@ -216,6 +294,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return boolean
+    */
     @Override
     public boolean ConectDesconectTelefono() {
         // TODO Auto-generated method stub
@@ -228,7 +309,9 @@ public class radio implements Funcionalidades{
         return conect;
     }
 
-
+    /**
+    * @return String
+    */
     @Override
     public String MostrarContactos() {
         // TODO Auto-generated method stub
@@ -240,6 +323,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return String
+    */
     @Override
     public String llamarContactos(String numero) {
         // TODO Auto-generated method stub
@@ -248,6 +334,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return String
+    */
     @Override
     public String FinalizarLlamada() {
         // TODO Auto-generated method stub
@@ -256,6 +345,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return boolean
+    */
     @Override
     public boolean CambiarSpeaker() {
         // TODO Auto-generated method stub
@@ -269,6 +361,9 @@ public class radio implements Funcionalidades{
     }
 
 
+    /**
+    * @return String
+    */
     @Override
     public String PlanificarViajes(String destino) {
         // TODO Auto-generated method stub
@@ -276,6 +371,9 @@ public class radio implements Funcionalidades{
         return resultado;
     }
 
+    /**
+    * @return void
+    */
     public void crearlistas(){
         
         ArrayList<cancion> lista1 = new ArrayList<cancion>();
@@ -294,6 +392,9 @@ public class radio implements Funcionalidades{
         albumes.add(lis2);
     }
 
+    /**
+    * @return String
+    */
     public String desplegar(){
         albumes = new ArrayList<listas>();
         crearlistas();
