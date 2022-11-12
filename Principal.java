@@ -13,7 +13,7 @@ public class Principal{
         Scanner teclado = new Scanner(System.in);
         radio radio = new radio();
         boolean salir = false;
-        boolean salir1 = false;
+        
         int op = 0;
         String menu = "\nBienvenido a la radio, funciones: \n1. Apagar radio \n2. Subir volumen \n3. Bajar volumen \n4. Modo radio \n5. Modo reproduccion \n6. Modo telefono \n7. Modo productividad";
 
@@ -30,7 +30,9 @@ public class Principal{
                 teclado.nextLine();
                 switch(op1){
                     case 1: {
+                        boolean salir1 = false;
                         while(!salir1){
+                            
                             System.out.println(menu);
                             System.out.println("\nIngrese una opcion");
                             op = teclado.nextInt();
@@ -101,7 +103,8 @@ public class Principal{
                                             case 3: {
                                                 System.out.println(radio.MostrarContactos());
                                                 System.out.println("Ingrese el numero de telefono de su contacto");
-                                                String numero = teclado.nextLine();
+                                                int num = teclado.nextInt();
+                                                String numero = String.valueOf(num); 
                                                 System.out.println(radio.llamarContactos(numero));
                                                 System.out.println("\n1. Finalizar llamada");
                                                 System.out.println("Seleccione una opcion");
@@ -123,6 +126,10 @@ public class Principal{
                                             case 5: {
                                                 salir3 = true;
                                                 break;
+                                            }
+
+                                            default: {
+                                                System.out.println("La entrada es incorrecta");
                                             }
                                         }
                                     }
@@ -146,6 +153,7 @@ public class Principal{
 
                                             case 2: {
                                                 salir4 = true;
+                                                break;
                                             }
 
                                         }
@@ -160,6 +168,12 @@ public class Principal{
 
                             }
                         }
+                        break;
+                    }
+
+                    case 2: {
+                        salir = true;
+                        break;
                     }
                 }
                 
