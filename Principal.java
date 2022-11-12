@@ -45,8 +45,7 @@ public class Principal{
             
                             switch(op){
                                 case 1:{ 
-                                    radio.cambiarVolumen(volumen);
-                                    
+                                    radio.cambiarVolumen(volumen);      
                                 break;
                                 }
                                 
@@ -55,14 +54,6 @@ public class Principal{
                                 }
     
                                 case 3: {
-                                    break;
-                                }
-                                
-                                case 4: {
-                                    break;
-                                }
-    
-                                case 5: {
                                     boolean salir2 = false;
                                     while(!salir2){
                                         System.out.println("1. Seleccionar Lista \n2. Cambiar cancion \n3.Eschuchar cancion \n4. Salir");
@@ -84,10 +75,8 @@ public class Principal{
                                     }
                                     break;
                                 }
-
-                                case 6: {
-                                    System.out.println("Saliendo del menu....");
-                                    salir1 = true;
+                                
+                                case 4: {
                                     boolean salir3 = false;
                                     while(!salir3){
                                         System.out.println("\n1. Conectar/Desconectar telefono \n2. Mostrar contactos \n3. Llamar contacto \n4. Cambiar a speaker o auriculares \n5. Salir");
@@ -140,7 +129,7 @@ public class Principal{
                                     break;
                                 }
     
-                                case 7: {
+                                case 5: {
                                     boolean salir4 = false;
                                     while(!salir4){
                                         System.out.println("\n1. Planificar Viaje \n2. Salir");
@@ -164,8 +153,13 @@ public class Principal{
                                     break;
                                 }
     
+                                case 6: {
+                                    salir1 = true;
+                                    break;
+                                }
+    
                                 default: {
-                                    System.out.println("Ingrese una opcion entre 1-7");
+                                    System.out.println("Ingrese una opcion entre 1 a 6");
                                     break;
                                 }
 

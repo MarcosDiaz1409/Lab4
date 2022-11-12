@@ -101,9 +101,30 @@ public class radio implements Funcionalidades{
 
 
     @Override
-    public int cambiarVolumen() {
-        // TODO Auto-generated method stub
-        return 0;
+    public int cambiarVolumen(int volumen) {
+        int a = 0;
+        System.out.println("1. Subir Volumen\n   2.Bajar volumen");
+        a = Integer.parseInt(teclado.nextLine());
+        if(a == 1){
+            System.out.println("Subiendo Volumen....");
+            volumen = volumen + 1;
+            System.out.println("El nivel del volumen es:" + volumen);
+        }else if(a == 2){
+            if(volumen > 0){
+                System.out.println("Bajando Volumen...");
+                volumen = volumen - 1;
+                System.out.println("El nivel del volumen es:" + volumen);
+            }else{
+                System.out.println("No es posible bajar mas el volumen, limite alcanzado");
+                volumen = volumen + 0;
+                System.out.println("El nivel del volumen es:" + volumen);
+            }
+        }else{
+            System.out.println("Error, entrada incorrecta");
+            volumen = volumen + 0;
+            System.out.println("El nivel del volumen es:" + volumen);
+        }
+        return volumen;
     }
 
 

@@ -1,6 +1,6 @@
 public interface Funcionalidades {
     public boolean encenderApagar(); 
-    public int cambiarVolumen();
+    public int cambiarVolumen(int volumen);
     public boolean cambiarFMAM();
     public float cambiarEmisora();
     public void guardarEmisora();
