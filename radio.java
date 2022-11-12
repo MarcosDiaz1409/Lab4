@@ -10,7 +10,10 @@ public class radio implements Funcionalidades{
     private String contactos[] = {"Luis Pedro...12345678", "Sebastian Perez...87654321", "Mercedes del Valle...42344289"};
     private boolean speaker;
     private boolean conect;
+    private listas actual;
+    private int canci;
     Scanner teclado = new Scanner(System.in);
+    
 
     public radio() {
         banda = "";
@@ -18,8 +21,10 @@ public class radio implements Funcionalidades{
         emisora = "";
         emisoras = new ArrayList<String>();
         albumes = new ArrayList<listas>();
+        actual = new listas();
         speaker = true;
         conect = false;
+        canci = 0;
     }
 
     public radio(String banda, String frecuencia, String emisora, ArrayList<String> emisoras, ArrayList<listas> albumes, boolean speaker, boolean conect) {
@@ -186,21 +191,28 @@ public class radio implements Funcionalidades{
     @Override
     public String seleccionarLista(int i) {
         // TODO Auto-generated method stub
-        return null;
+        actual = albumes.get(i-1);
+        return "Se selecciono una lista de reproduccion";
     }
 
 
     @Override
     public String cambiarCancion() {
         // TODO Auto-generated method stub
-        return null;
+        if(canci==0){
+            canci = 1;
+        }
+        else{
+            canci = 0;
+        }
+        return "\nSe cambio la cancion";
     }
 
 
     @Override
     public String escucharCancion() {
         // TODO Auto-generated method stub
-        return null;
+        return "\nEscuchando: " + "\n" + actual.getCanciones().get(canci).toString();
     }
 
 
@@ -261,6 +273,36 @@ public class radio implements Funcionalidades{
     public String PlanificarViajes(String destino) {
         // TODO Auto-generated method stub
         String resultado = "Se ha planificado su viaje a "+destino;
+        return resultado;
+    }
+
+    public void crearlistas(){
+        
+        ArrayList<cancion> lista1 = new ArrayList<cancion>();
+        ArrayList<cancion> lista2 = new ArrayList<cancion>();
+        cancion ca1 = new cancion("Natural", "3:30", "Imagine Dragons", "pop");
+        cancion ca2 = new cancion("The Search", "4:30", "NF", "rap");
+        cancion ca3 = new cancion("Humble", "3:00", "Kendrick Lamar", "rap");
+        cancion ca4 = new cancion("A Milli", "Lil Wayne", "4:30", "rap");
+        lista1.add(ca1);
+        lista1.add(ca2);
+        lista2.add(ca3);
+        lista2.add(ca4);
+        listas lis1 = new listas("Musica ingles", lista1);
+        listas lis2 = new listas("Rap", lista2);
+        albumes.add(lis1);
+        albumes.add(lis2);
+    }
+
+    public String desplegar(){
+        albumes = new ArrayList<listas>();
+        crearlistas();
+        int i = 1;
+        String resultado = "";
+        for(listas lista : albumes){
+            resultado = resultado + "\n" + i +". "+lista.toString();
+            i++;
+        }
         return resultado;
     }
 }

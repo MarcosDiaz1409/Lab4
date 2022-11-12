@@ -98,19 +98,31 @@ public class Principal{
                                 case 3: {
                                     boolean salir2 = false;
                                     while(!salir2){
-                                        System.out.println("1. Seleccionar Lista \n2. Cambiar cancion \n3.Eschuchar cancion \n4. Salir");
+                                        System.out.println("\n1. Seleccionar Lista \n2. Cambiar cancion \n3. Eschuchar cancion \n4. Salir");
                                         int op2 = teclado.nextInt();
                                         teclado.nextLine();
                                         switch(op2){
                                             case 1: {
+                                                System.out.println(radio.desplegar());
+                                                System.out.println("Escoga una lista de reproduccion");
+                                                int xd = teclado.nextInt();
+                                                teclado.nextLine();
+                                                System.out.println(radio.seleccionarLista(xd));
                                                 break;
                                             }
 
                                             case 2: {
+                                                System.out.println(radio.cambiarCancion());
                                                 break;
                                             }
 
                                             case 3: {
+                                                System.out.println(radio.escucharCancion());
+                                                break;
+                                            }
+
+                                            case 4: {
+                                                salir2 = true;
                                                 break;
                                             }
                                         }
