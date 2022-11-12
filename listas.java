@@ -33,15 +33,10 @@ public class listas {
         this.canciones = canciones;
     }
 
-
     @Override
     public String toString() {
         return
             "Nombre de la lista: " + getNombre();
     }
-
-
-
-
 
 }
