@@ -17,8 +17,9 @@ public class Principal{
         boolean salirfp = false;
         int op = 0;
         int op1 = 0;
+        int opmr = 0;
         int volumen = 0;
-    
+        double emi = 100.50;
         /**
          * Menu con todas las opciones que el usuario puede escoger
          */
@@ -50,6 +51,47 @@ public class Principal{
                                 }
                                 
                                 case 2: {
+                                    boolean salirmr = false;
+                                    while(!salirmr){
+                                        System.out.println("1. Cambiar de FM a AM o viceversa");
+                                        System.out.println("2. Cambiar de emisora");
+                                        System.out.println("3. Guardar emisora");
+                                        System.out.println("4. Cargar emisora");
+                                        System.out.println("5. Salir");
+                                        opmr = Integer.parseInt(teclado.nextLine());
+                                        switch (opmr) {
+                                            case 1:{
+                                                radio.cambiarFMAM();
+                                                break;
+                                            }
+
+                                            case 2:{
+                                                radio.cambiarEmisora(emi);
+                                                break;
+                                            }
+
+                                            case 3:{
+                                                radio.guardarEmisora();
+                                                break;
+                                            }
+
+                                            case 4:{
+                                                radio.cargarEmisora();
+                                                break;
+                                            }
+
+                                            case 5:{
+                                                salirmr = true;
+                                                break;
+                                            }
+                                        
+                                            default:{
+                                                System.out.println("Opcion no existente");
+                                                break;
+                                            }
+                                        }
+
+                                    }
                                     break;
                                 }
     

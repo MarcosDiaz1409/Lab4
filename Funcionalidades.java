@@ -1,10 +1,10 @@
 public interface Funcionalidades {
     public boolean encenderApagar(); 
     public int cambiarVolumen(int volumen);
-    public boolean cambiarFMAM();
-    public float cambiarEmisora();
+    public String cambiarFMAM();
+    public double cambiarEmisora(double emi);
     public void guardarEmisora();
-    public String cargarEmisora();
+    public double cargarEmisora();
     public String seleccionarLista(int i);
     public String cambiarCancion();
     public String escucharCancion();

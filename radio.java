@@ -129,30 +129,57 @@ public class radio implements Funcionalidades{
 
 
     @Override
-    public boolean cambiarFMAM() {
-        // TODO Auto-generated method stub
-        return false;
+    public String cambiarFMAM(){
+        System.out.println("Ingrese su banda actual: ");
+        String banda = teclado.nextLine();
+        if(banda.equals("FM")){
+            System.out.println("Cambiando....");
+            banda = "AM";
+            System.out.println("Su banda ha cambiado a: " + banda);
+        }else if(banda.equals("AM")){
+            System.out.println("Cambiando....");
+            banda = "FM";
+            System.out.println("Su banda ha cambiado a: " + banda + "\n");
+        }else{
+            System.out.println("La banda no es correcta");
+        }
+        return banda;
     }
 
 
     @Override
-    public float cambiarEmisora() {
-        // TODO Auto-generated method stub
-        return 0;
+    public double cambiarEmisora(double emi) {
+        System.out.println("1. Subir de emisora");
+        System.out.println("2. Bajar de emisora");
+        int opem = Integer.parseInt(teclado.nextLine());
+        if(opem == 1){
+            emi = emi + 0.5;
+            System.out.println("Tu emisora actual es: " + emi);
+        }else if(opem == 2){
+            emi = emi - 0.5;
+            System.out.println("Tu emisora actual es: " + emi);
+        }else{
+            System.out.println("Entrada incorrecta");
+        }
+        return emi;
     }
 
 
     @Override
     public void guardarEmisora() {
-        // TODO Auto-generated method stub
-        
+        System.out.println("Ingrese la emisora que desea guardar:");
+        String emis = teclado.nextLine();
+        emisoras.add(emis);
+        System.out.println("Tu emisora ha sido guardada!");
     }
 
 
     @Override
-    public String cargarEmisora() {
-        // TODO Auto-generated method stub
-        return null;
+    public double cargarEmisora() {
+        System.out.println("Que emisora deseas cargar?");
+        double nuevaemisora = Integer.parseInt(teclado.nextLine());
+        System.out.println("Tu emisora actual es: " + nuevaemisora);
+        return nuevaemisora;
     }
 
 
