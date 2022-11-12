@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class radio implements Funcionalidades{
     private String banda;
@@ -9,6 +10,7 @@ public class radio implements Funcionalidades{
     private String contactos[] = {"Luis Pedro...12345678", "Sebastian Perez...87654321", "Mercedes del Valle...42344289"};
     private boolean speaker;
     private boolean conect;
+    Scanner teclado = new Scanner(System.in);
 
     public radio() {
         banda = "";
@@ -83,8 +85,18 @@ public class radio implements Funcionalidades{
 
     @Override
     public boolean encenderApagar() {
-        // TODO Auto-generated method stub
-        return false;
+        String en;
+        boolean salir = false;
+        System.out.println("Desea apagar la radio?");
+        en = teclado.nextLine();
+        if(en.equals("Si")){
+            System.out.println("La radio se apagara");
+            salir = true;
+        }else{
+            System.out.println("La radio esta encendida");
+            salir = false;
+        }
+        return salir;
     }
 
 
@@ -203,8 +215,4 @@ public class radio implements Funcionalidades{
         String resultado = "Se ha planificado su viaje a "+destino;
         return resultado;
     }
-
-    
-
-
 }
